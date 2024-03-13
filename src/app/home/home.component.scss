@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+
+.home {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 0;
+  color: #fff;
+
+  .table {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    table {
+      flex: 0.9;
+      border-collapse: collapse;
+      background: #fff;
+      overflow: hidden;
+
+      td,
+      th {
+        padding-left: 8px;
+        text-align: left;
+      }
+
+      thead tr {
+        height: 60px;
+        background: $primary-color;
+      }
+
+      tbody tr {
+        height: 50px;
+        font-family: $font-family;
+        font-size: 15px;
+        color: $font-color;
+
+        &:nth-child(even) {
+          background-color: $background-color;
+        }
+
+        &:hover {
+          color: $font-color-dark;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
