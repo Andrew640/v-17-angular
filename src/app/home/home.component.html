@@ -3,19 +3,16 @@
     <table>
       <thead>
         <tr>
-          <th>Car</th>
-          <th>Model</th>
-          <th>Price</th>
-          <th>Year</th>
+          <th>Fuel</th>
+          <th>Percentage</th>
         </tr>
       </thead>
       <tbody>
-        @for (car of (carsData | async); track car.id) {
+        @for (powerType of (powerGenerationData | async)?.data[0].generationmix;
+        track powerType.fuel) {
         <tr>
-          <td>{{ car.make }}</td>
-          <td>{{ car.model }}</td>
-          <td>{{ car.price | currency }}</td>
-          <td>{{ car.year }}</td>
+          <td>{{ powerType.fuel }}</td>
+          <td>{{ powerType.perc }}</td>
         </tr>
         }
       </tbody>
@@ -23,29 +20,10 @@
   </div>
 
   <div class="chart">
-    <app-bar-chart [carData]="carsData | async"></app-bar-chart>
+    <app-pie-chart
+      [powerGeneration]="powerGenerationData | async"
+    ></app-pie-chart>
   </div>
-  <div class="chart">
-    <app-line-chart [carData]="carsData | async"></app-line-chart>
-  </div>
 
-  <!-- 1. get data from a service -->
-  <!-- 2. display the data in a table -->
-  <!-- 3. display data on a chart using chart.js - companring price of the models -->
-  <!-- 4. write tests -->
-  <!-- 5. upload to Github -->
-
-  <!-- Other things to consider -->
-  <!-- Observable data service for getting the data -->
-  <!-- Click on a car to go to seperate page displaying more data -->
-  <!-- Add a car to the list -->
-  <!-- Delete a car from the list -->
-  <!-- Edit a car in the list -->
-  <!-- More RxJs -->
-  <!-- Maybe use a real API with a search function? -->
-
-  <!-- Create app in Angular 16 -->
-
-  <!-- - Displaying data
-  - interacting with data -->
+  <!-- <fa-icon class="spinner" [icon]="faSpinner" animation="spin"></fa-icon> -->
 </div>

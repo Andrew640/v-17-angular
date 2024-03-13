@@ -1,16 +1,19 @@
 <div class="app">
   <div class="header">
-    <div class="logo"></div>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/listings">Listings</a></li>
-      <li class="button-blue">
-        <a>Sign up</a>
-      </li>
-      <li class="button">
-        <a>Log in</a>
-      </li>
-    </ul>
+    <div class="logo">GB Power</div>
+    <form [formGroup]="dropdownForm">
+      <select
+        class="dropdown"
+        formControlName="dropdown"
+        (change)="onDropdownChange()"
+      >
+        @for (value of (dropdownValues); track $index) {
+        <option [value]="value">
+          {{ value }}
+        </option>
+        }
+      </select>
+    </form>
   </div>
-  <router-outlet />
+  <app-home [dropdownSelection]="dropdownSelection"></app-home>
 </div>

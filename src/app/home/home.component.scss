@@ -2,19 +2,21 @@
 
 .home {
   width: 100%;
-  max-width: 1200px;
+
   margin: 100px auto 0;
-  color: #fff;
+  color: black;
+  display: flex;
 
   .table {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: row;
 
     table {
-      flex: 0.9;
+      flex: 0.5;
+      border: 1px solid $table-border;
       border-collapse: collapse;
       background: #fff;
       overflow: hidden;
@@ -23,11 +25,12 @@
       th {
         padding-left: 8px;
         text-align: left;
+        border-right: 1px solid $table-border;
       }
 
       thead tr {
         height: 60px;
-        background: $primary-color;
+        background: $grey;
       }
 
       tbody tr {
@@ -45,6 +48,22 @@
           cursor: pointer;
         }
       }
+
+      tr {
+        border-bottom: 1px solid $table-border;
+      }
     }
+  }
+
+  .chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.5;
+  }
+
+  .spinner {
+    color: $primary-color;
+    font-size: 30px;
   }
 }

@@ -23,49 +23,13 @@
     z-index: 100;
 
     .logo {
-      content: "test logo";
-      height: 40px;
-      width: 30px;
+      font-size: 30px;
     }
 
-    ul {
-      display: flex;
-      align-items: center;
+    .dropdown {
+      border: 0px;
+      outline: 0px;
       list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        &:not(:nth-last-of-type(-n + 2)) {
-          padding-right: 36px;
-          cursor: pointer;
-        }
-
-        a {
-          text-decoration: none;
-          color: inherit;
-        }
-      }
-
-      .button-blue {
-        padding: 12px 24px;
-        background-color: $primary-color;
-        margin-right: 8px;
-        font-weight: 500;
-        cursor: pointer;
-
-        a {
-          color: #fff;
-        }
-      }
-
-      .button {
-        padding: 12px 24px;
-        background-color: #edf0f2;
-        margin-right: 8px;
-        font-weight: 500;
-        cursor: pointer;
-      }
     }
   }
 
